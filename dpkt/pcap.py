@@ -148,7 +148,7 @@ class Reader(object):
             if not buf: break
             hdr = self.__ph(buf)
             buf = self.__f.read(hdr.caplen)
-            yield (hdr.tv_sec + (hdr.tv_usec / 1000000.0), buf)
+            yield (hdr.tv_sec, hdr.tv_usec, buf)
 
 if __name__ == '__main__':
     import unittest
